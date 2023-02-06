@@ -48,7 +48,6 @@ function markerPlace(array, map) {
       layer.remove();
     }
   });
-
   array.forEach((item, index) => {
     const coordinates = item.geocoded_column;
     const latitude = Object.values(coordinates)[0];
