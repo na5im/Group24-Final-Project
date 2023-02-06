@@ -53,9 +53,9 @@ function markerPlace(array, map) {
     const coordinates = item.geocoded_column;
     const latitude = Object.values(coordinates)[0];
     const longitude = Object.values(coordinates)[1];
-    L.marker([longitude, latitude]).addTo(map);
+    L.marker([latitude, longitude]).addTo(map);
     if (index === 0) {
-      map.setView([longitude, latitude], 10);
+      map.setView([latitude, longitude], 10);
     }
   });
 }
@@ -201,7 +201,7 @@ async function main() {
   let currentList = [];
 
   form.addEventListener('input', (event) => {
-    console.log(event.target.value);
+    // console.log(event.target.value);
     // const newFilterList = filterList(currentList, event.target.value);
     // injectHTML(newFilterList);
     markerPlace(currentList, map);
@@ -214,17 +214,12 @@ async function main() {
     // This constant will have the value of your 15-restaurant collection when it processes
     const userInput = document.getElementById('city').value;
     currentList = processLitters(litterData, userInput);
-    // console.log(restaurantList);
     console.log(userInput);
 
     // And this function call will perform the "side effect" of injecting the HTML list for you
     markerPlace(currentList, map);
-
-    // By separating the functions, we open the possibility of regenerating the list
-    // without having to retrieve fresh data every time
-    // We also have access to some form values, so we could filter the list based on name
   });
-  console.log(litterData[0]);
+  // console.log(litterData[0]);
 }
 
 autocomplete(document.getElementById('city'), cities);

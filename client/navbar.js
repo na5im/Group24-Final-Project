@@ -12,7 +12,7 @@ function test() {
     const activeWidthNewAnimWidth = activeItem.innerWidth();
     const itemPosNewAnimTop = activeItem.position();
     const itemPosNewAnimLeft = activeItem.position();
-    console.log(activeItem, itemPosNewAnimTop, activeWidthNewAnimWidth);
+    // console.log(activeItem, itemPosNewAnimTop, activeWidthNewAnimWidth);
 
     $('.hori-selector').css({
       top: `${itemPosNewAnimTop.top}px`,
